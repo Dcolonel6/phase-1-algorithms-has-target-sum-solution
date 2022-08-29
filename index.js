@@ -1,9 +1,25 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = {}
+
+  for(let index = 0; index < array.length; index++){  
+    const complimentary = target - array[index]
+    if(complimentary in seenNumbers){
+      return true
+    }else{
+      seenNumbers[array[index]] = true
+    }
+      
+  }
+  return false
+    
 }
 
 /* 
   Write the Big O time complexity of your function here
+  runtime complexity is O(n)
+  space complexity is O(n2) this is becuse our input is an array and array input will grow with o(n) if they bcome bigger.we have 
+  an object that grows in the same way
 */
 
 /* 
